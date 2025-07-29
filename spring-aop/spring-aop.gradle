@@ -1,0 +1,12 @@
+description = "Spring AOP"
+
+dependencies {
+	implementation(project(":spring-beans"))
+	implementation(project(":spring-core"))
+	optional("org.aspectj:aspectjweaver")
+	optional("org.apache.commons:commons-pool2")
+	optional("com.jamonapi:jamon")
+	testImplementation(testFixtures(project(":spring-beans")))
+	testImplementation(testFixtures(project(":spring-core")))
+	testFixturesImplementation(testFixtures(project(":spring-core")))
+}
